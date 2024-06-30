@@ -11,6 +11,7 @@
               <form [formGroup]="editMissionForm">
                 <div>
                     <div class="row"><input type="hidden" formControlName="id">
+
                       <div class="col-sm-6">
                           <label class="col-form-label">Country</label>
                           <select class="form-select" (change)="CityList($event)" formControlName="countryId">
@@ -57,7 +58,11 @@
                         Please Enter Mission Description
                       </span>
                     </div>
-            
+                    <!-- Removed TotalSheets Field From edit mission -->
+                    <div class="col-sm-6">
+                      <label class="col-form-label">Total seats</label>
+                      <input type="number" class="form-control" placeholder="Enter total seets" formControlName="totalSheets">
+                    </div>
                    </div>
                    <div class="row">
                     <div class="col-sm-6">
