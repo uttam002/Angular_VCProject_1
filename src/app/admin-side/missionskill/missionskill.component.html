@@ -32,6 +32,13 @@
                  <td style="text-align: right;color:#14c506;" [ngStyle]="item.status == 'active' ? {'color': '#14c506'} : {'color': '#ff0000'}">{{item.status == 'active' ? 'Active' : 'In-Active'}}</td>
                  <td style="text-align: right;">
 
+                  <!-- Removed delete & edit button from mission skill -->
+                  <button class="btnedit" routerLink="../updateMissionSkill/{{ item.id }}">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button class="btndelete" data-target="#removeMissionSkillModal"(click)="OpenDeleteSkillModal(item.id)">
+                    <i class="fa fa-trash-o"></i>
+                  </button>
                  </td>
                </tr>
                <tr *ngIf="result.length === 0">
@@ -64,7 +71,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btnCancel" data-dismiss="modal" (click)="CloseDeleteSkillModal()"><span class="Cancel"> Cancel</span> </button>
-        <button type="button" class="btnRemove"><span class="remove" (click)=" DeleteSkillModal()">Delete</span></button>
+        <button type="button" class="btnRemove"><span class="remove" (click)=" DeleteSkillData()">Delete</span></button>
       </div>
     </div>
   </div>
